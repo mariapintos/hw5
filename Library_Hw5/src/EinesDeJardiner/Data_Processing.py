@@ -1,4 +1,3 @@
-#DATA PROCESSING
 def clearNA_from_column(df, list_of_columns):
     # Remove those rows that contain NaN values in the columns: age, gender, ethnicity
     return df.dropna(subset=list_of_columns, how="any")
