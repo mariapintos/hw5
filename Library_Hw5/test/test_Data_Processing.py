@@ -1,6 +1,8 @@
 
 import unittest
 import pandas as pd
+import numpy as np
+from pandas.testing import assert_frame_equal
 
 # Defining the functions
 def clearNA_from_column(df, list_of_columns):
@@ -16,19 +18,16 @@ def fillNA(df, list_of_columns):
 # Testing the functions
 class Test_Data_Processing(unittest.TestCase):
     def test_clearNA(self):
-        df = pd.read_csv('/Users/lluisarull/Desktop/DSDM/Computing_for_Data_Science/Homework_5/sample_diabetes_mellitus_data - sample_diabetes_mellitus_data.csv')
-        list_of_columns = ['gender', 'age', 'ethnicity']
-        result = clearNA_from_column(df, list_of_columns)
-        expected_output = df.dropna(subset=['gender','age','ethnicity'], how="any")
-        self.assertEqual(result, expected_output)
+        data_to_test = pd.DataFrame(data = {"age":[18, 22, np.nan]})
+        expected_output = pd.DataFrame(data = {"age":[18, 22]})
+        result = clearNA_from_column(data_to_test, ["age"])
+        assert_frame_equal(result, expected_output, check_dtype=False)
 
     def test_fillNA(self):
-        df = pd.read_csv('/Users/lluisarull/Desktop/DSDM/Computing_for_Data_Science/Homework_5/sample_diabetes_mellitus_data - sample_diabetes_mellitus_data.csv')
-        columns_to_fill = ['height', 'weight']
-        result = fillNA(df,columns_to_fill)
-        expected_output = df['height','weight'].fillna(df[['height','weight']].mean())
-        self.assertEqual(result, expected_output)
+        data_to_test = pd.DataFrame(data = {"age":[18, 22, np.nan]})
+        expected_output = pd.DataFrame(data = {"age":[18, 22, 20]})
+        result = fillNA(data_to_test, ["age"])
+        assert_frame_equal(result, expected_output, check_dtype=False)
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
-
