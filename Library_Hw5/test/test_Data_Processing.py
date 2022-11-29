@@ -3,17 +3,7 @@ import unittest
 import pandas as pd
 import numpy as np
 from pandas.testing import assert_frame_equal
-
-# Defining the functions
-def clearNA_from_column(df, list_of_columns):
-    return df.dropna(subset=list_of_columns, how="any")
-
-def fillNA(df, list_of_columns):
-    # Fill NaN with the mean value of the column in the columns: height, weight.
-    for column in list_of_columns:
-        mean = df[column].mean()
-        df[column] = df[column].fillna(mean)
-    return df
+from EinesDeJardiner.Data_Processing import clearNA_from_column, fillNA
 
 # Testing the functions
 class Test_Data_Processing(unittest.TestCase):

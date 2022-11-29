@@ -5,3 +5,6 @@ src/EinesDeJardiner.egg-info/SOURCES.txt
 src/EinesDeJardiner.egg-info/dependency_links.txt
 src/EinesDeJardiner.egg-info/requires.txt
 src/EinesDeJardiner.egg-info/top_level.txt
+test/test_Data_Processing.py
+test/test_Dummy_Creation.py
+test/test_Model.py

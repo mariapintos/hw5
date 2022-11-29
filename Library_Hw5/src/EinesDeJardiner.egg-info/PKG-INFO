@@ -1,7 +1,11 @@
-Metadata-Version: 2.1
+Metadata-Version: 1.1
 Name: EinesDeJardiner
 Version: 0.0.1
 Summary: This library aims to provide some tools for solving Homework 5 of Computing for Data Science
-Home-page: 
+Home-page: UNKNOWN
 Author: Maria Pintos, Javier Roset, Lluisa Rull
+Author-email: UNKNOWN
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
 Classifier: Programming Language :: Python :: 3.7.10
