@@ -12,7 +12,7 @@ def return_trained_model_RandomForestClassifier(X, Y, SEED=0):
 
 def fill_df_predictions(X, model):
     # 
-    df = pd.DataFrame(data=X)
+    df = pd.DataFrame(data=X).copy()
     target_prediction = model.predict_proba(X)
     df["predictions"] = target_prediction[:, 1]
 
